@@ -3,14 +3,15 @@ namespace proiectPIU.Persoane
 {
     public interface IPersoana
     {
-        string Nume { get; set; }
+        string Nume { get; }
         string DataNasterii { get; }
 
-        bool CardEliberat { get; set; }
+        bool CardEliberat { get; }
 
         int CartiImprumutate { get; }
 
         void ImprumutaCarte(int durata, string categorie, string denumire);
+        void ReturneazaCarte();
 
         
     }

@@ -1,11 +1,11 @@
-﻿using System;
+﻿
 
 namespace proiectPIU.Persoane
 {
     public abstract class Persoana:IPersoana
     {
         const string DEFAULT_NUME = "Neinitializat";
-        const string DEFAULT_DATAN = "xx/xx/xxxx";
+        const string DEFAULT_DATAN = "Neinitializat";
         const bool DEFAULT_CARD = false;
 
         protected string nume;
@@ -13,7 +13,18 @@ namespace proiectPIU.Persoane
         protected int cartiImprumutate;
         protected bool cardEliberat;
 
-        public string Nume { get; set; }
+        public string Nume
+        {
+            get
+            {
+                return nume;
+            }
+
+            protected set
+            {
+                nume = value;
+            }
+        }
         public string DataNasterii
         {
             get
@@ -42,7 +53,7 @@ namespace proiectPIU.Persoane
                 return cardEliberat;
             }
 
-            set
+            protected set
             {
                 cardEliberat = value;
             }
@@ -55,9 +66,13 @@ namespace proiectPIU.Persoane
             this.dataNasterii = dataNasterii;
         }
 
+        public override string ToString()
+        {
+            return Nume;
+        }
 
         public abstract void ImprumutaCarte(int durata, string caregorie, string denumire);
-        
+        public abstract void ReturneazaCarte();
 
 
     }
