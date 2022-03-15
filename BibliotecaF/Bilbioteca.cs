@@ -58,9 +58,6 @@ namespace proiectPIU.BibliotecaF
 
             if (!(oraCurenta >= 8 && oraCurenta <= 16)) bibliotecaDeschisa = false;
 
-
-
-
         }
 
     }
