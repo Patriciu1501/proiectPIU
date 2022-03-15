@@ -1,10 +1,10 @@
 ﻿
-namespace proiectPIU
+namespace proiectPIU.BibliotecaF
 {
     public enum CategorieCarte
     {
-        Fantasy,
-        Action,
+        Fantezie,
+        Actiune,
         Fictiune,
         Folclor,
         Mitologie,

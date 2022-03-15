@@ -7,6 +7,8 @@ namespace proiectPIU
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(1);
+            Bibliotecar lol = new Bibliotecar();
             
         }
     }

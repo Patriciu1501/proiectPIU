@@ -1,5 +1,4 @@
 ﻿
-
 namespace proiectPIU.Persoane
 {
     using System;
@@ -10,5 +9,9 @@ namespace proiectPIU.Persoane
         {
             throw new NotImplementedException();
         }
+
+        public override void ReturneazaCarte()
+        {
+            throw new NotImplementedException();
+        }
     }
-}
