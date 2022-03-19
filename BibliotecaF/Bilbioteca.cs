@@ -1,7 +1,7 @@
 ﻿
 namespace proiectPIU.BibliotecaF
 {
-    using proiectPIU.Persoane;
+    using Persoane;
     using System;
     using System.Globalization;
 
@@ -13,6 +13,7 @@ namespace proiectPIU.BibliotecaF
         private const int oraInchidere = 16;
 
         private Bibliotecar personal;
+        private Carte[] carti;
         private readonly bool bibliotecaDeschisa;
 
         public int OraDeschidere
@@ -46,6 +47,8 @@ namespace proiectPIU.BibliotecaF
                 return personal;
             }
         }
+
+        
 
         public Biblioteca()
         {

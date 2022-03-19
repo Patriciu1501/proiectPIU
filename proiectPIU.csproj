@@ -43,15 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="BibliotecaF\ICarte.cs" />
-	<Compile Include="BibliotecaF\Carte.cs" />
+    <Compile Include="BibliotecaF\ICarte.cs" />
+    <Compile Include="BibliotecaF\Carte.cs" />
     <Compile Include="BibliotecaF\Bilbioteca.cs" />
     <Compile Include="BibliotecaF\CategorieCarte.cs" />
     <Compile Include="BibliotecaF\IBiblioteca.cs" />
     <Compile Include="Persoane\Bibliotecar.cs" />
-    <Compile Include="Persoane\Elev.cs" />
     <Compile Include="Persoane\IPersoana.cs" />
     <Compile Include="Persoane\Persoana.cs" />
+    <Compile Include="Persoane\Profesor.cs" />
     <Compile Include="Persoane\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

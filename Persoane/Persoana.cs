@@ -72,6 +72,7 @@ namespace proiectPIU.Persoane
         }
 
         public abstract void ImprumutaCarte(int durata, string caregorie, string denumire);
+        
         public abstract void ReturneazaCarte();
 
 
