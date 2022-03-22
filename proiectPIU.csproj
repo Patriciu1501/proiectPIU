@@ -47,7 +47,6 @@
     <Compile Include="BibliotecaF\Carte.cs" />
     <Compile Include="BibliotecaF\Bilbioteca.cs" />
     <Compile Include="BibliotecaF\CategorieCarte.cs" />
-    <Compile Include="BibliotecaF\IBiblioteca.cs" />
     <Compile Include="Persoane\Bibliotecar.cs" />
     <Compile Include="Persoane\IPersoana.cs" />
     <Compile Include="Persoane\Persoana.cs" />

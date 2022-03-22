@@ -4,8 +4,7 @@ namespace proiectPIU.BibliotecaF
     {
 
         string Denumire { get; set; }
-        string Autor { get; set; }
-        string Editura { get; set; }
+        string Autor { get;  }
         int NumarPagini { get; set; }
 
         CategorieCarte Categoria { get; set; }

@@ -2,12 +2,20 @@
 namespace proiectPIU.Persoane
 {
     using System;
-   
-    public class Bibliotecar:Persoana
-    {
+    using BibliotecaF;
+
+    public class Bibliotecar : Persoana {
+
+
+
+        public Bibliotecar(string nume, string dataNasterii):base(nume, dataNasterii) {
+
+        }
+
+
         public override void ImprumutaCarte(int durata, string categorie, string denumire = "")
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ReturneazaCarte()
@@ -15,6 +23,13 @@ namespace proiectPIU.Persoane
             throw new NotImplementedException();
         }
 
+
+        public void AdaugareCarte(Carte carte) {
+
+            Biblioteca.carti.Add(carte);
+
+            Biblioteca.OnModificareNumarCarti?.Invoke();
+        }
     }
 }
 

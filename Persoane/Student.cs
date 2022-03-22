@@ -7,7 +7,7 @@ namespace proiectPIU.Persoane
     {
         public override void ImprumutaCarte(int durata, string categorie, string denumire="")
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void ReturneazaCarte()

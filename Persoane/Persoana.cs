@@ -64,6 +64,8 @@ namespace proiectPIU.Persoane
         {
             this.Nume = nume;
             this.dataNasterii = dataNasterii;
+            this.CardEliberat = card;
+            this.CartiImprumutate = 0;
         }
 
         public override string ToString()
@@ -72,8 +74,10 @@ namespace proiectPIU.Persoane
         }
 
         public abstract void ImprumutaCarte(int durata, string caregorie, string denumire);
-        
+
         public abstract void ReturneazaCarte();
+
+        
 
 
     }

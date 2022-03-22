@@ -6,33 +6,32 @@ namespace proiectPIU.BibliotecaF
     using System.Globalization;
 
 
-    public class Biblioteca : IBiblioteca
+    public static class Biblioteca 
     {
+        public delegate void ModificareNumarCarti();
+        public static ModificareNumarCarti OnModificareNumarCarti = NumarCartiModificat;
 
-        private const int oraDeschidere = 8;
-        private const int oraInchidere = 16;
+        private const int NUMAR_BIBLIOTECARI = 3;
+        private const int ORA_DESCHIDERE = 8;
+        private const int ORA_INCHIDERE = 16;
 
-        private Bibliotecar personal;
-        private Carte[] carti;
-        private readonly bool bibliotecaDeschisa;
+        private static Bibliotecar[] personal;
+        private static readonly bool bibliotecaDeschisa;
+ 
+        public static System.Collections.Generic.List<Carte> carti;
+        
 
-        public int OraDeschidere
-        {
-            get
-            {
-                return oraDeschidere;
+        public static Tuple<int,int> ProgramLucru {
+
+            get {
+
+                Tuple<int, int> Date = new Tuple<int, int>(ORA_DESCHIDERE, ORA_INCHIDERE);
+
+                return Date;
             }
         }
 
-        public int OraInchidere
-        {
-            get
-            {
-                return oraInchidere;
-            }
-        }
-
-        public bool BibliotecaDeschisa
+        public static bool BibliotecaDeschisa
         {
             get
             {
@@ -40,18 +39,19 @@ namespace proiectPIU.BibliotecaF
             }
         }
 
-        public Bibliotecar Personal
-        {
-            get
-            {
-                return personal;
-            }
-        }
 
-        
-
-        public Biblioteca()
+        static Biblioteca()
         {
+
+            personal = new Bibliotecar[NUMAR_BIBLIOTECARI] {
+
+                new Bibliotecar("Felicia Olaru", "18/01/1988"),
+                new Bibliotecar("Ana-Maria Prelipceanu", "22/08/1978"),
+                new Bibliotecar("Oana Vacarescu", "15/03/1980")
+            };
+
+            carti = new System.Collections.Generic.List<Carte>();
+
             string ziuaCurenta = DateTime.Now.DayOfWeek.ToString();
             int oraCurenta = DateTime.Now.Hour;
 
@@ -61,7 +61,16 @@ namespace proiectPIU.BibliotecaF
 
             if (!(oraCurenta >= 8 && oraCurenta <= 16)) bibliotecaDeschisa = false;
 
+            
+
         }
 
+        public static void NumarCartiModificat() {
+
+            Console.WriteLine("Numarul de carti a fost modificat!");
+        }
+
+
+   
     }
 }

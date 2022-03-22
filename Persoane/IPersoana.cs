@@ -6,10 +6,6 @@ namespace proiectPIU.Persoane
         string Nume { get; }
         string DataNasterii { get; }
 
-        bool CardEliberat { get; }
-        bool Student { get; }
-        bool Elev { get; }
-        bool Profesor { get; }
 
         int CartiImprumutate { get; }
 
