@@ -11,44 +11,80 @@ namespace proiectPIU
     {
         static void Main(string[] args)
         {
-            int studentProfesor;
-            string nume = string.Empty;
 
-            Console.WriteLine("Bine a-ti venit la biblioteca !");
+            int mod = 0;
+
+            Console.WriteLine("1. Lansati aplicatie biblioteca");
+            Console.WriteLine("2. Accesare optiuni administrator");
+            Console.Write("=> ");
+
+            if(int.TryParse(Console.ReadLine(), out int optiune)) {
+
+                if(optiune != 1 && optiune != 2) {
+
+                    Console.WriteLine("Varianta gresita.");
+                    Console.WriteLine("S-a ales automat prima optiune.");
+                    optiune = 1;
+                    
+                }
+            }
+            
+            else{
+
+                Console.WriteLine("Varianta gresita.");
+                Console.WriteLine("S-a ales automat prima optiune."); 
+                optiune = 1;
+            }
+
+            if(optiune == 2) {
+
+                #region MENU_ADMINISTRATOR
+
+                // ...
+
+                #endregion
+            }
+            
+
+            int studentProfesor = 0;
+            string nume = string.Empty;
+            
+            Console.WriteLine("Bine a-ti venit la biblioteca!");
             Console.WriteLine("Sunteti profesor(1) sau student(2)? ");
             Console.Write("Introduce-ti varianta(numarul):  ");
-            try {
+           
+            while(studentProfesor != 1 && studentProfesor != 2) {
 
-                studentProfesor = Console.Read() - 48;
+                if(int.TryParse(Console.ReadLine(), out int rezultat)) {
 
-                if (studentProfesor != 1 && studentProfesor != 2) 
-                    throw new ArgumentException("Profesor sau Student: Varianta incorecta");
+                    if(rezultat != 1 && rezultat != 2) {
+
+                        Console.WriteLine("Varianta gresita =>");
+                        Console.WriteLine("A-ti fost setat automat student");
+                        studentProfesor = 1;
+                    }
+
+                    else studentProfesor = rezultat;
+                } 
                 
+                else {
 
-                Console.Write("Introduceti-va numele: ");
-                nume = Console.ReadLine();
-
-                
-
-
-
-
-
-            } catch (ArgumentException arg) {
-
-               
+                    Console.WriteLine("Varianta gresita =>");
+                    Console.WriteLine("A-ti fost setat automat student");
+                    studentProfesor = 1;
+                }
 
             }
             
 
-            
+            #region MENU_BIBLIOTECA
 
-            while (true) {
+            // MENU-biblioteca
+            // in developing
 
+            #endregion
 
-
-            }
-            
+     
             
         }
     }

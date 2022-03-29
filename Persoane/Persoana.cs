@@ -6,12 +6,10 @@ namespace proiectPIU.Persoane
     {
         const string DEFAULT_NUME = "Neinitializat";
         const string DEFAULT_DATAN = "Neinitializat";
-        const bool DEFAULT_CARD = false;
 
         protected string nume;
         protected readonly string dataNasterii;
         protected int cartiImprumutate;
-        protected bool cardEliberat;
 
         public string Nume
         {
@@ -46,25 +44,11 @@ namespace proiectPIU.Persoane
             }
         }
 
-        public bool CardEliberat
-        {
-            get
-            {
-                return cardEliberat;
-            }
 
-            protected set
-            {
-                cardEliberat = value;
-            }
-        }
-
-
-        protected Persoana(string nume=DEFAULT_NUME, string dataNasterii=DEFAULT_DATAN, bool card=DEFAULT_CARD)
+        protected Persoana(string nume=DEFAULT_NUME, string dataNasterii=DEFAULT_DATAN)
         {
             this.Nume = nume;
             this.dataNasterii = dataNasterii;
-            this.CardEliberat = card;
             this.CartiImprumutate = 0;
         }
 
@@ -76,9 +60,6 @@ namespace proiectPIU.Persoane
         public abstract void ImprumutaCarte(int durata, string caregorie, string denumire);
 
         public abstract void ReturneazaCarte();
-
-        
-
 
     }
 }
