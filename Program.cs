@@ -6,6 +6,7 @@ namespace proiectPIU
     using System.Linq;
     using Persoane;
     using BibliotecaF;
+    
 
     class Program
     {
@@ -40,7 +41,25 @@ namespace proiectPIU
 
                 #region MENU_ADMINISTRATOR
 
-                // ...
+                while (true) {
+
+                    Console.WriteLine("1.Administrare carti");
+                    Console.WriteLine("2.Administrare persoane");
+
+                    switch (Console.ReadKey().KeyChar) {
+
+                        case '1':
+
+                            break;
+
+                        case '2':
+                            break;
+
+                        default:
+                            Console.WriteLine("Optiune invalida");
+                            break;
+                    }
+                }
 
                 #endregion
             }

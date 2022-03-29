@@ -11,6 +11,7 @@ namespace proiectPIU.BibliotecaF
         public delegate void ModificareNumarCarti();
         public static ModificareNumarCarti OnModificareNumarCarti = NumarCartiModificat;
 
+
         private const int NUMAR_BIBLIOTECARI = 3;
         private const int ORA_DESCHIDERE = 8;
         private const int ORA_INCHIDERE = 16;
@@ -25,7 +26,7 @@ namespace proiectPIU.BibliotecaF
 
             get {
 
-                Tuple<int, int> Date = new Tuple<int, int>(ORA_DESCHIDERE, ORA_INCHIDERE);
+                var Date = new Tuple<int, int>(ORA_DESCHIDERE, ORA_INCHIDERE);
 
                 return Date;
             }
