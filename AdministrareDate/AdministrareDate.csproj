@@ -47,10 +47,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\proiectPIU.csproj">
-      <Project>{50faefd9-98a5-4bc7-a2e0-cf3e220b8e17}</Project>
-      <Name>proiectPIU</Name>
-    </ProjectReference>
+    <Content Include="FisierCarti.txt" />
+    <Content Include="FisierPersoane.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

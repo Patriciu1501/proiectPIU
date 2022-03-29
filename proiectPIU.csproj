@@ -58,5 +58,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AdministrareDate\AdministrareDate.csproj">
+      <Project>{b0309932-06cb-47a0-ab94-fa186cabeeb6}</Project>
+      <Name>AdministrareDate</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
