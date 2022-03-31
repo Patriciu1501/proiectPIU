@@ -68,7 +68,8 @@ namespace proiectPIU
 
                         Console.WriteLine("\n1. Administrare carti");
                         Console.WriteLine("2. Administrare persoane");
-                        Console.WriteLine("3. Inapoi");
+                        Console.WriteLine("3. *Tema Lab4-2");
+                        Console.WriteLine("4. Inapoi");
                         Console.Write("=> ");
 
                         string valoare = Console.ReadLine();
@@ -216,6 +217,11 @@ namespace proiectPIU
                                 break;
 
                             case "3":
+                                TemaLab4_2 kek = new TemaLab4_2(args);
+                                break;
+
+
+                            case "4":
                                 inapoiMainMenu = true;
                                 break;
 

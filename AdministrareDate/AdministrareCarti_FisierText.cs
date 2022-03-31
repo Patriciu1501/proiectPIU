@@ -24,6 +24,7 @@ namespace AdministrareDate {
             string denumire = string.Empty;
             string autor = string.Empty;
             string categorieText = string.Empty;
+            string numarCarti = string.Empty;
 
 
             Console.Write("Denumire carte: ");
@@ -32,11 +33,13 @@ namespace AdministrareDate {
             autor = Console.ReadLine();
             Console.Write("Categoria: ");
             categorieText = Console.ReadLine();
+            Console.Write("Numar de astfel de carti: ");
+            numarCarti = Console.ReadLine();
 
             
             using(StreamWriter fisier = new StreamWriter(numeFisier, true)) {
 
-                fisier.WriteLine(denumire + ";" + autor + ";" + categorieText);
+                fisier.WriteLine(denumire + ";" + autor + ";" + categorieText + ";" + numarCarti);
             }
 
             Console.Clear();

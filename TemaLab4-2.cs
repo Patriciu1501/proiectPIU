@@ -1,19 +1,37 @@
 ﻿
 
-namespace proiectPIU {
-    class TemaLab4_2
+using System;
+
+namespace proiectPIU
+{
+    public class TemaLab4_2
     {
         private string[][] cuvinte;
 
-        TemaLab4_2(string[] argumente)
+        public TemaLab4_2(string[] argumente)
         {
             cuvinte = new string[26][];
+            int[] index = new int[26];  // stocheaza numarul de elemente pentru fiecare arr din CUVINTE, initial toate 0
 
-            foreach (string cuvant in argumente)
-            {
-                cuvinte[(int) cuvant[0] - 48][cuvinte[(int) cuvant[0] - 48].Length] = cuvant;
+
+            for (int i = 0; i < 26; i++) cuvinte[i] = new string[100];
+
+            for (int i = 0; i < argumente.Length; i++) {
+                
+                int indice = (int)char.ToLower(argumente[i][0]) - 97; // lucrez cu ascii
+                
+                cuvinte[indice][index[indice]++] = argumente[i];
             }
 
+            for(int i = 0; i < cuvinte.Length; i++) {
+
+                if(index[i] > 0) Console.WriteLine(new string('-', 20));
+
+                for (int j = 0; j < index[i]; j++) {
+
+                    Console.WriteLine(cuvinte[i][j]);
+                }
+            }
         }
     }
 }
