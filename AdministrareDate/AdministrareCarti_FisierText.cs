@@ -39,7 +39,8 @@ namespace AdministrareDate {
                 fisier.WriteLine(denumire + ";" + autor + ";" + categorieText);
             }
 
-
+            Console.Clear();
+            Console.WriteLine("Cartea a fost adaugata!");
         }
 
 
@@ -47,17 +48,28 @@ namespace AdministrareDate {
         {
             var date = new List<string>();
 
+            bool fisierGol = false;
+
 
             using (StreamReader fisier = new StreamReader(numeFisier))
             {
+                if (fisier.EndOfStream) fisierGol = true;
+
                 while (!fisier.EndOfStream)
                 {
                     date.Add(fisier.ReadLine());
                 }
             }
 
+            Console.Clear();
 
-            Console.WriteLine("Au fost preluate toate datele.");
+            if (!fisierGol) Console.WriteLine("Intregul fisier a fost citit!");
+
+            else {
+
+                Console.WriteLine("Fisierul este gol!");
+                date.Add("Fisierul este gol!");
+            }
 
             return date;
         }
@@ -84,12 +96,14 @@ namespace AdministrareDate {
                 }
             }
 
+            Console.Clear();
+
             if (linieDate == null)
             {
-                Console.WriteLine("Nu s-a putut gasi");
-                linieDate = "Not found";
+                linieDate = "Nu s-a putut gasi";
+                Console.WriteLine(linieDate);
             }
-            else Console.WriteLine("Datele au fost preluate cu succes");
+            else Console.WriteLine("Datele dupa autor au fost preluate cu succes");
 
 
             return linieDate;

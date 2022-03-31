@@ -54,6 +54,7 @@
     <Compile Include="Persoane\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemaLab4-2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

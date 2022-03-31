@@ -1,5 +1,7 @@
 ﻿
 
+using System.Runtime.InteropServices;
+
 namespace AdministrareDate
 {
     using System;
@@ -26,20 +28,35 @@ namespace AdministrareDate
             string dataNasterii = string.Empty;
             int numarCartiImprumutate = 0;
 
+            Console.Write("Nume complet: ");
+            numeComplet = Console.ReadLine();
+            Console.Write("Student sau profesor: ");
+            studentProfesor = Console.ReadLine();
+            Console.Write("Data nasterii(zz/ll/aaaa): ");
+            dataNasterii = Console.ReadLine();
+            Console.Write("Numar carti imprumutate: ");
+            numarCartiImprumutate = Convert.ToInt32(Console.ReadLine());
 
             using (StreamWriter fisier = new StreamWriter(numeFisier, true)) {
 
                 fisier.WriteLine(numeComplet + ";" + dataNasterii + ";" + studentProfesor + ";" + numarCartiImprumutate);
             }
+
+            Console.Clear();
+            Console.WriteLine("Persoana a fost adaugata!");
+
         }
 
         public static List<string> GetFullDate()
         {
             var date = new List<string>();
 
+            bool fisierGol = false;
 
             using (StreamReader fisier = new StreamReader(numeFisier))
             {
+                if (fisier.EndOfStream) fisierGol = true;
+
                 while (!fisier.EndOfStream)
                 {
                     date.Add(fisier.ReadLine());
@@ -47,6 +64,15 @@ namespace AdministrareDate
             }
 
 
+            Console.Clear();
+
+            if(!fisierGol) Console.WriteLine("Intregul fisier a fost citit!");
+            
+            else{
+            
+                Console.WriteLine("Fisierul este gol!");
+                date.Add("Fisierul este gol!");
+            }
 
             return date;
         }
@@ -74,12 +100,14 @@ namespace AdministrareDate
                 }
             }
 
+            Console.Clear();
+
             if(linieDate == null)
             {
-                Console.WriteLine("Nu s-a putut gasi");
-                linieDate = "Not found";
+                linieDate = "Nu s-a putut gasi";
+                Console.WriteLine(linieDate);
             }
-            else Console.WriteLine("Datele au fost preluate cu succes");
+            else Console.WriteLine("Datele dupa nume au fost preluate cu succes");
 
 
             return linieDate;
