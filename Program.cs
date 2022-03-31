@@ -11,41 +11,51 @@ namespace proiectPIU
 
     class Program
     {
-        static void Main(string[] args)
-        {
 
+        static void AplicatiaBiblioteca()
+        {
             int mod = 0;
 
             Console.WriteLine("1. Lansati aplicatie biblioteca");
             Console.WriteLine("2. Accesare optiuni administrator");
+            Console.WriteLine("3. Iesire din program");
             Console.Write("=> ");
 
-            if(int.TryParse(Console.ReadLine(), out int optiune)) {
 
-                if(optiune != 1 && optiune != 2) {
+            if (int.TryParse(Console.ReadLine(), out int optiune)) {
+
+                if (optiune != 1 && optiune != 2 && optiune != 3) {
 
                     Console.WriteLine("Varianta gresita.");
                     Console.WriteLine("S-a ales automat prima optiune.");
                     optiune = 1;
-                    
+
                 }
             }
-            
-            else{
+
+            else {
 
                 Console.WriteLine("Varianta gresita.");
-                Console.WriteLine("S-a ales automat prima optiune."); 
+                Console.WriteLine("S-a ales automat prima optiune.");
                 optiune = 1;
             }
 
-            if(optiune == 2) {
+            if (optiune == 3) {
+
+                Console.WriteLine("S-a iesit din program");
+                return;
+            }
+
+            else if (optiune == 2) {
 
                 #region MENU_ADMINISTRATOR
+
 
                 while (true) {
 
                     Console.WriteLine("\n1.Administrare carti");
                     Console.WriteLine("2.Administrare persoane");
+                    Console.WriteLine("3.Inapoi");
                     Console.Write("=> ");
 
                     char valoare = (char)Console.Read();
@@ -60,10 +70,9 @@ namespace proiectPIU
                             bool inapoi = false;
 
 
-                            while (true)
-                            {
+                            while (true) {
                                 if (inapoi == true) break;
-                                
+
 
                                 Console.WriteLine("\n1. Adaugare carte");
                                 Console.WriteLine("2. Citire intreg fisier");
@@ -73,14 +82,13 @@ namespace proiectPIU
                                 Console.WriteLine("6. Inapoi");
                                 Console.Write("=> ");
 
-                                
-                                valoare2 = Console.ReadLine();
-                                valoare2 = Console.ReadLine();
-                               
-                                
 
-                                switch (valoare2)
-                                {
+                                valoare2 = Console.ReadLine();
+                                valoare2 = Console.ReadLine();
+
+
+
+                                switch (valoare2) {
 
                                     case "1":
                                         AdministrareCarti_FisierText.AdaugareCarte();
@@ -95,8 +103,7 @@ namespace proiectPIU
                                         break;
 
                                     case "4":
-                                        if (dateDupaAutor == null)
-                                        {
+                                        if (dateDupaAutor == null) {
                                             Console.WriteLine("Datele inca nu au fost citite");
                                         }
 
@@ -105,8 +112,7 @@ namespace proiectPIU
 
                                     case "5":
                                         if (dateCarti == null) Console.WriteLine("Datele inca nu au fost preluate");
-                                        else
-                                        {
+                                        else {
                                             foreach (string i in dateCarti) Console.WriteLine(i);
                                         }
 
@@ -130,8 +136,7 @@ namespace proiectPIU
                             string valoare3 = null;
                             bool inapoi2 = false;
 
-                            while (true)
-                            {
+                            while (true) {
 
                                 if (inapoi2 == true) break;
 
@@ -147,8 +152,7 @@ namespace proiectPIU
                                 valoare3 = Console.ReadLine();
 
 
-                                switch (valoare3)
-                                {
+                                switch (valoare3) {
 
                                     case "1":
                                         AdministrarePersoane_FisierText.AdaugarePersoana();
@@ -163,8 +167,7 @@ namespace proiectPIU
                                         break;
                                     case "4":
 
-                                        if (dateDupaNume == null)
-                                        {
+                                        if (dateDupaNume == null) {
                                             Console.WriteLine("Datele inca nu au fost citite");
                                         }
 
@@ -172,8 +175,7 @@ namespace proiectPIU
                                         break;
 
                                     case "5":
-                                        if (datePersoane == null)
-                                        {
+                                        if (datePersoane == null) {
                                             Console.WriteLine("Datele inca nu au fost preluate");
                                         }
 
@@ -191,6 +193,10 @@ namespace proiectPIU
                             }
                             break;
 
+                        case '3':
+                            AplicatiaBiblioteca();
+                            break;
+
 
                         default:
                             Console.WriteLine("Optiune invalida");
@@ -200,20 +206,20 @@ namespace proiectPIU
 
                 #endregion
             }
-            
+
 
             int studentProfesor = 0;
             string nume = string.Empty;
-            
+
             Console.WriteLine("Bine a-ti venit la biblioteca!");
             Console.WriteLine("Sunteti profesor(1) sau student(2)? ");
             Console.Write("Introduce-ti varianta(numarul):  ");
-           
-            while(studentProfesor != 1 && studentProfesor != 2) {
 
-                if(int.TryParse(Console.ReadLine(), out int rezultat)) {
+            while (studentProfesor != 1 && studentProfesor != 2) {
 
-                    if(rezultat != 1 && rezultat != 2) {
+                if (int.TryParse(Console.ReadLine(), out int rezultat)) {
+
+                    if (rezultat != 1 && rezultat != 2) {
 
                         Console.WriteLine("Varianta gresita =>");
                         Console.WriteLine("A-ti fost setat automat student");
@@ -221,8 +227,8 @@ namespace proiectPIU
                     }
 
                     else studentProfesor = rezultat;
-                } 
-                
+                }
+
                 else {
 
                     Console.WriteLine("Varianta gresita =>");
@@ -231,7 +237,7 @@ namespace proiectPIU
                 }
 
             }
-            
+
 
             #region MENU_BIBLIOTECA
 
@@ -240,7 +246,14 @@ namespace proiectPIU
 
             #endregion
 
-     
+
+        }
+
+
+        static void Main(string[] args)
+        {
+
+            AplicatiaBiblioteca();
             
         }
     }

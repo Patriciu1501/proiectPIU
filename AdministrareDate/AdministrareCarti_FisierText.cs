@@ -9,11 +9,11 @@ namespace AdministrareDate {
     public static class AdministrareCarti_FisierText {
 
 
-        private static string caleFisier = @"C:\Users\STUDENT\Source\Repos\Patriciu1501\proiectPIU\AdministrareDate\FisierCarti.txt";
+        private const string numeFisier = "Carti.txt";
 
         static AdministrareCarti_FisierText() {
 
-            Stream streamFisierText = File.Open(caleFisier, FileMode.OpenOrCreate);
+            Stream streamFisierText = File.Open(numeFisier, FileMode.OpenOrCreate);
 
             streamFisierText.Close();
 
@@ -34,7 +34,7 @@ namespace AdministrareDate {
             categorieText = Console.ReadLine();
 
             
-            using(StreamWriter fisier = new StreamWriter(caleFisier, true)) {
+            using(StreamWriter fisier = new StreamWriter(numeFisier, true)) {
 
                 fisier.WriteLine(denumire + ";" + autor + ";" + categorieText);
             }
@@ -48,7 +48,7 @@ namespace AdministrareDate {
             var date = new List<string>();
 
 
-            using (StreamReader fisier = new StreamReader(caleFisier))
+            using (StreamReader fisier = new StreamReader(numeFisier))
             {
                 while (!fisier.EndOfStream)
                 {
@@ -67,7 +67,7 @@ namespace AdministrareDate {
         {
             string linieDate = null;
 
-            using (StreamReader fisier = new StreamReader(caleFisier))
+            using (StreamReader fisier = new StreamReader(numeFisier))
             {
                 while (!fisier.EndOfStream)
                 {

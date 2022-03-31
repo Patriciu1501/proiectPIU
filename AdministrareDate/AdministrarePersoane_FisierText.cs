@@ -9,12 +9,12 @@ namespace AdministrareDate
 
     public static class AdministrarePersoane_FisierText
     {
-        private const string caleFisier = @"C:\Users\STUDENT\Source\Repos\Patriciu1501\proiectPIU\AdministrareDate\FisierPersoane.txt";
+        private const string numeFisier = "Persoane.txt";
 
         static AdministrarePersoane_FisierText()
         {
 
-            Stream streamFisierText = File.Open(caleFisier, FileMode.OpenOrCreate);
+            Stream streamFisierText = File.Open(numeFisier, FileMode.OpenOrCreate);
 
             streamFisierText.Close();
         }
@@ -27,7 +27,7 @@ namespace AdministrareDate
             int numarCartiImprumutate = 0;
 
 
-            using (StreamWriter fisier = new StreamWriter(@"C:\Users\STUDENT\Source\Repos\Patriciu1501\proiectPIU\AdministrareDate\FisierPersoane.txt", true)) {
+            using (StreamWriter fisier = new StreamWriter(numeFisier, true)) {
 
                 fisier.WriteLine(numeComplet + ";" + dataNasterii + ";" + studentProfesor + ";" + numarCartiImprumutate);
             }
@@ -38,7 +38,7 @@ namespace AdministrareDate
             var date = new List<string>();
 
 
-            using (StreamReader fisier = new StreamReader(caleFisier))
+            using (StreamReader fisier = new StreamReader(numeFisier))
             {
                 while (!fisier.EndOfStream)
                 {
@@ -57,7 +57,7 @@ namespace AdministrareDate
         {
             string linieDate = null;
 
-            using (StreamReader fisier = new StreamReader(caleFisier))
+            using (StreamReader fisier = new StreamReader(numeFisier))
             {
                 while (!fisier.EndOfStream)
                 {
